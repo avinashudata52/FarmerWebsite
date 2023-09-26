@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Image Slider</title>
+    <style>
+        /* Style for the image container */
+        .slider-container {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* Style for the individual slides */
+        .slide {
+            display: none;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <img class="slide" src="image/image1.jpeg" alt="Image 1">
+        <img class="slide" src="image/image3.jpeg" alt="Image 2">
+        <img class="slide" src="image/image2.jpeg" alt="Image 3">
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Automatically advance to the next slide every 3 seconds (3000 milliseconds)
+        setInterval(nextSlide, 3000);
+
+        // Show the first slide initially
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>

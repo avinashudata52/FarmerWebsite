@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="cstyle.css">    
+    <link rel="stylesheet" href="style.css">  
+    <link rel="icon" href="icon.png" type="image/x-icon"/>,  
+</head>
+
+<body>
+    <!---------------------------------------------------------JAVASCRIP CODE--------------------------------------->
+    <script>
+        // Function to add a new message to the chat
+        function addMessage(sender, message) {
+            const chatMessages = document.getElementById("chat-messages");
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("message");
+            chatMessages.appendChild(messageDiv);
+        }
+
+        // Function to handle sending a message
+        function sendMessage() {
+            const messageInput = document.getElementById("message-input");
+            const message = messageInput.value;
+            if (message.trim() !== "") {
+                addMessage("You", message);
+                messageInput.value = ""; // Clear the input field
+            }
+        }
+
+        // Event listener for the send button
+        const sendButton = document.getElementById("send-button");
+        sendButton.addEventListener("click", sendMessage);
+
+        // Event listener for pressing Enter key
+        const messageInput = document.getElementById("message-input");
+        messageInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
+
+    </script>
+
+    <!-----------------------------------------------HTML CODE------------------------------------------------>
+
+    <header>
+        <h1>Welcome to Farmer's Hub</h1>
+    </header>
+    </p>
+    <nav>
+        <ul>
+            <li><a href="crops.html">Crop & Fertilizers</a></li> <!-- Crop & Fertilizers -->
+            <li><a href="water.html">Water & Chemicals</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="chat.html">Chat</a></li>
+        </ul>
+    </nav>
+
+
+    <!---------------------------------------------SLIDESHOW START--------------------------------------------------------------->
+    <style>
+        /* Style for the image container */
+        .slider-container {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            width: 100%;
+            height: 75vh;
+            object-fit: cover;
+        }
+
+        /* Style for the individual slides */
+         .slide {
+            display: none;
+            width: 100%;
+        } 
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <img class="slide" src="image/image4.jpg" alt="Image 1">
+        <img class="slide" src="image/image3.jpeg" alt="Image 2">
+        <img class="slide" src="image/image2.jpeg" alt="Image 3">
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Automatically advance to the next slide every 3 seconds (3000 milliseconds)
+        setInterval(nextSlide, 3000);
+
+        // Show the first slide initially
+        showSlide(currentSlide);
+    </script>
+<!-----------------------------------------------------SLIDESHOW END---------------------------------------------->
+    <footer>
+        <p>&copy; 2023 CSE  L.Y. BTech</p>
+    </footer>
+</body>
+
+</html>

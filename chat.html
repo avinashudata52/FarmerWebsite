@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/chaticon.png" type="image/x-icon">
+    <title>Chat Section with Alert Boxes</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            font-size: large;
+            font-weight: bold;
+            
+            /* padding-top: 230px; */
+        }
+
+        .chat-container {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            border: 2px solid #0d0c0c;
+            border-radius: 10px;
+            overflow: hidden;
+            
+        }
+
+        .message {
+            padding: 10px;
+            
+        }
+
+        .user-message {
+            background-color: #DCF8C6;
+            text-align: right;
+        }
+
+        .other-user-message {
+            background-color: #E6E6E6;
+            text-align: left;
+        }
+
+        .message-input {
+            width: 100%;
+            padding: 10px;
+            height: 390px;
+            font-size: medium;
+            border: none;
+            outline: none;
+        }
+
+        .send-button {
+            width: 100%;
+            padding: 10px;
+            height: 60px;
+            font-size:larger;
+            background-color: #007BFF;
+            font-weight: bold;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 1px;
+        }
+    </style>
+    <style>
+        body, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the header */
+header {
+
+/* background-color: */
+background-image: linear-gradient(to top, #0fd850 0%, #f9f047 100%);
+color: rgb(14, 14, 14);
+text-align: center;
+padding: 25px;
+margin-bottom: -20px;
+margin-top: -10px;
+}
+
+/* Navigation menu */
+nav ul {
+    /* border-radius: 20px; */
+    padding-top: 30px;
+    list-style-type: none;
+    padding-top: 2px;
+    /* background-color: #333; */
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+    margin-right: 30px;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    /* font-weight: none; */
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+</style>
+</head>
+
+<body> <!-- background="image/image7.jpg"  -->
+    <header>
+        <h1>Welcome to Chat Section</h1>
+    </header>
+    </p>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="crops.html">Crop & Fertilizers</a></li> <!-- Crop & Fertilizers -->
+            <li><a href="water.html">Water & Chemicals</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="chat.html">Chat</a></li>
+        </ul>
+    </nav>
+
+<br>
+    <div class="chat-container">
+        <div class="message user-message">
+            Hello! How can I help you?
+        </div>
+        <!-- <div class="message other-user-message">
+            Hi! I have a question about your products.
+        </div> -->
+        <!-- Add more messages here -->
+        <!-- <div class="message user-message">
+            Sure, feel free to ask.
+        </div> -->
+        <!-- <div class="message other-user-message">
+            What are your products?
+        </div> -->
+        <!-- Chat input area -->
+        <input type="text" class="message-input" id="user-input" placeholder="Type your message...">
+        <button class="send-button" onclick="sendMessage()">Send</button>
+    </div>
+    <br><br>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput.trim() !== '') {
+                alert('Thank you for Your Message: ');
+                document.getElementById('user-input').value = ''; // Clear input field
+            }
+        }
+    </script>
+    <footer>
+        <p>&copy; 2023   CSE L .Y.  BTech</p>
+    </footer>
+</body>
+</html>

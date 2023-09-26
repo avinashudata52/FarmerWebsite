@@ -1,0 +1,136 @@
+section {
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+}
+/* Chat section styles */
+#chat {
+    background-color: #f0f0f0;
+    /* padding: 20px; */
+    border-radius: 10px;
+}
+
+/* Chat messages container */
+#chat-messages {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Individual chat messages */
+.message {
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* User input area */
+#user-input {
+    margin-top: 10px;
+    display: flex;
+}
+
+/* Input field */
+#message-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+/* Send button */
+#send-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Send button hover effect */
+#send-button:hover {
+    background-color: #45a049;
+}
+
+/* Crop & Fertilizers Section */
+#crop-fertilizers {
+    border:solid rgb(11, 11, 11) 6px;
+    box-sizing: 20px;
+    background-color: #F7EED8;
+    /* padding: 40px 0; */
+}
+
+#crop-fertilizers p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#crop-fertilizers ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+#crop-fertilizers li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Crop Cards Styling */
+.crop-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* padding: 20px;
+    margin-top: 20px; */
+     text-align: center; 
+    transition: transform 0.3s;
+   
+}
+/* .wheat{
+    padding-right: 75%;
+}
+.wheatinfo{
+    scroll-padding-top:  90px;
+} */
+
+.crop-card:hover {
+    transform: translateY(-5px);
+}
+
+.crop-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.crop-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.crop-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Crop-specific styles */
+.crop-card:nth-child(odd) {
+    background-color: #E8F5E9;
+}
+
+.crop-card:nth-child(even) {
+    background-color: #E1F5FE;
+}
+
+.crop-card:nth-child(3n) {
+    background-color: #FFF9C4;
+}
+
+.crop-card:nth-child(4n) {
+    background-color: #FFD180;
+}

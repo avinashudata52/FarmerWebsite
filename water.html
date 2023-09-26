@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/watericon.jpeg" type="image/x-icon">
+    <title>Water</title>
+    <style>
+    .climate{
+         /* margin-top: 50px; */
+        /* padding-left: 550px; */
+        text-align: center;
+        width: 300px;
+        border: 15px solid green;
+        padding: 50px;
+        margin: 20px;
+
+    }
+    /* Basic styling for the header */
+    header {
+        
+        /* background-color: */
+        background-image: linear-gradient(to top, #0fd850 0%, #f9f047 100%);
+        color: rgb(14, 14, 14);
+        text-align: center;
+        padding: 1px;
+        margin-bottom: -20px;
+        margin-top: -10px;
+    }
+    
+    /* Navigation menu */
+    nav ul {
+        margin-bottom: 30px;
+        border-radius: 5px; 
+        padding-top: 2px;
+        list-style-type: none;
+        /* background-color: #333; */
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+        overflow: hidden;
+    }
+    
+    nav li {
+        float: left;
+        margin-right: 30px;
+    }
+    
+    nav a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    footer {
+    text-align: center;
+    font-size:larger;
+    font-weight:bold;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+    
+    
+    </style>
+</head>
+
+
+<body>
+    
+    <header>
+        <h1>Welcome to Water & Chemicals Section</h1>
+    </header>
+    </p>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="crops.html">Crop & Fertilizers</a></li> <!-- Crop & Fertilizers -->
+            <li><a href="water.html">Water & Chemicals</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="chat.html">Chat</a></li>
+        </ul>
+    </nav>
+    <center>
+    <div class="climate">
+        <h1>Select Climate</h1>
+        <select id="climateSelect">
+            <option value="temperate">Summer</option>
+            <option value="tropical">Rainy</option>
+            <option value="arid">Winter</option>
+        </select>
+    
+        <h2>Suitable Crops</h2>
+        <select id="cropSelect">
+            <!-- Options will be populated dynamically using JavaScript -->
+        </select>
+    
+        <h3>Required Fertilizers</h3>
+        <select id="fertilizerSelect">
+            <!-- Options will be populated dynamically using JavaScript -->
+        </select>
+    
+        <h4>Fertilizer Properties</h4>
+        <div id="fertilizerProperties">
+            <!-- Fertilizer properties will be displayed here -->
+        </div>
+    </div>
+</center>
+        <script>
+            const climateSelect = document.getElementById('climateSelect');
+            const cropSelect = document.getElementById('cropSelect');
+            const fertilizerSelect = document.getElementById('fertilizerSelect');
+            const fertilizerProperties = document.getElementById('fertilizerProperties');
+    
+            // Sample data for climates, crops, and fertilizers (you can replace this with your own data)
+            const data = {
+                temperate: {
+                    crops: ['Wheat', 'Tomatoes', 'Sunflowers'],
+                    fertilizers: ['Specialty', 'Biofertilizers', 'Potassium'],
+                    properties: {
+                        Specialty: 'Helps with leafy growth',
+                        Biofertilizers: 'Aids in root development',
+                        Potassium: 'Enhances disease resistance',
+                    },
+                },
+                tropical: {
+                    crops: ['Millets', 'Banana', 'Pineapple'],
+                    fertilizers: ['Nitrogen', 'Potassium', 'Calcium'],
+                    properties: {
+                        Nitrogen: 'Promotes green, leafy growth',
+                        Potassium: 'Enhances fruit quality',
+                        Calcium: 'Strengthens cell walls',
+                    },
+                },
+                arid: {
+                    crops: ['Rice', 'Jowar', 'Soya Bean'],
+                    fertilizers: ['Phosphorus', 'Micronutrient', 'Nitrogen'],
+                    properties: {
+                        Phosphorus: 'Stimulates flowering',
+                        Micronutrient: 'Helps in drought tolerance',
+                        Nitrogen: 'Assists in amino acid formation',
+                    },
+                },
+            };
+    
+            // Function to populate crop options based on selected climate
+            climateSelect.addEventListener('change', () => {
+                const selectedClimate = climateSelect.value;
+                cropSelect.innerHTML = ''; // Clear previous options
+                fertilizerSelect.innerHTML = ''; // Clear previous options
+                fertilizerProperties.textContent = ''; // Clear previous fertilizer properties
+    
+                if (selectedClimate in data) {
+                    const crops = data[selectedClimate].crops;
+                    const fertilizers = data[selectedClimate].fertilizers;
+    
+                    // Enable the crop select dropdown
+                    cropSelect.disabled = false;
+    
+                    crops.forEach(crop => {
+                        const option = document.createElement('option');
+                        option.value = crop;
+                        option.textContent = crop;
+                        cropSelect.appendChild(option);
+                    });
+    
+                    // Enable the fertilizer select dropdown
+                    fertilizerSelect.disabled = false;
+    
+                    fertilizers.forEach(fertilizer => {
+                        const option = document.createElement('option');
+                        option.value = fertilizer;
+                        option.textContent = fertilizer;
+                        fertilizerSelect.appendChild(option);
+                    });
+                } else {
+                    // If no suitable crops for the selected climate, disable the dropdowns
+                    cropSelect.disabled = true;
+                    fertilizerSelect.disabled = true;
+                }
+            });
+    
+            // Function to display fertilizer properties
+            fertilizerSelect.addEventListener('change', () => {
+                const selectedFertilizer = fertilizerSelect.value;
+                if (selectedFertilizer in data[climateSelect.value].properties) {
+                    const property = data[climateSelect.value].properties[selectedFertilizer];
+                    fertilizerProperties.textContent = `Property: ${property}`;
+                } else {
+                    fertilizerProperties.textContent = 'No property information available.';
+                }
+            });
+        </script>
+
+<br>
+    <footer>
+        <p>&copy; 2023 CSE L.Y. BTech</p>
+    </footer>
+
+</body>
+</html>

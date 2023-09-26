@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crops</title>
+    <link rel="icon" href="image/cropsicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="cstyle.css">    
+    <link rel="stylesheet" href="Cro_style.css">    
+</head>
+<style>
+    section {
+        /* padding: 20px; */
+        background-color: #f0f0f0;
+        margin-bottom: 20px;
+    }
+    /* Chat section styles */
+    #chat {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    /* Chat messages container */
+    #chat-messages {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    
+    /* Individual chat messages */
+    .message {
+        padding: 5px;
+        margin: 5px 0;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* User input area */
+    #user-input {
+        margin-top: 10px;
+        display: flex;
+    }
+    
+    /* Input field */
+    #message-input {
+        flex: 1;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-right: 10px;
+    }
+    
+    /* Send button */
+    #send-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    
+    /* Send button hover effect */
+    #send-button:hover {
+        background-color: #45a049;
+    }
+    
+    /* Crop & Fertilizers Section */
+    #crop-fertilizers {
+        border:solid rgb(11, 11, 11) 6px;
+        box-sizing: 20px;
+        background-color: #F7EED8;
+        /* padding: 40px 0; */
+    }
+    
+    #crop-fertilizers p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    
+    #crop-fertilizers ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+    
+    #crop-fertilizers li {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    /* Crop Cards Styling */
+    .crop-card {
+        background-color: #ffffff;
+        /* border-radius: 10px; */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        /* padding: 20px; */
+        /* margin-top: 20px; */
+         text-align: center; 
+         /* margin-right: 50px; */
+         /* margin-right: 350px; */
+         /* margin-left: 50px; */
+        /* transition: transform 0.3s; */
+       
+    }
+    /* .wheat{
+        padding-right: 75%;
+    }
+    .wheatinfo{
+        scroll-padding-top:  90px;
+    } */
+    
+    .crop-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .crop-card img {
+         
+        max-width: 100%;
+        margin-right: 20px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .crop-card h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    
+    .crop-card p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #666;
+    }
+    
+    /* Crop-specific styles */
+    .crop-card:nth-child(odd) {
+        background-color: #E8F5E9;
+    }
+    
+    .crop-card:nth-child(even) {
+        background-color: #E1F5FE;
+    }
+    
+    .crop-card:nth-child(3n) {
+        background-color: #FFF9C4;
+    }
+    
+    .crop-card:nth-child(4n) {
+        background-color: #FFD180;
+    }
+    
+    /* Additional crop cards */
+    /* Add styles for more crop cards here */
+    
+    /* Water & Chemicals Section */
+    #water-chemicals {
+        background-color: #C2E0E9;
+        padding: 40px 0;
+    }    
+
+    .wheat{
+        margin-right: 30px;
+        
+    }
+
+     .rice_card{
+            background-color: #ffffff;
+            /* border-radius: 10px; */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            /* padding: 50px; */
+            /* margin-top: 20px; */
+             text-align: center; 
+             /* margin-right: 50px; */
+             /* margin-right: 350px; */
+             /* margin-left: 50px;  */
+            /* transition: transform 0.3s; */
+        
+        /* margin-left: 300px; */
+    } 
+    .sugar{
+        background-color: #ffffff;
+        /* border-radius: 10px; */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        /* padding: 50px; */
+        /* margin-top: 20px; */
+         text-align: center; 
+         /* margin-right: 50px; */
+         /* margin-right: 350px; */
+         /* margin-left: 50px;  */
+        /* transition: transform 0.3s; */
+    
+    /* margin-left: 300px; */
+    }
+    
+    .soybean{
+        
+        background-color: #ffffff; */
+        /* border-radius: 10px; */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        /* padding: 20px; */
+        /* margin-top: 20px; */
+         text-align: center; 
+         /* margin-right: 50px;
+         margin-right: 350px;
+         margin-left: 50px; 
+        transition: transform 0.3s;
+    
+    margin-left: 300px; */
+    }
+    .coffee
+    {   
+        background-color: #ffffff;
+        /* border-radius: 10px; */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        /* padding: 20px; */
+        /* margin-top: 20px; */
+         text-align: center; 
+         /* margin-right: 50px;
+         margin-right: 350px;
+         margin-left: 50px; 
+        transition: transform 0.3s;
+    
+    margin-left: 300px; */
+    }
+
+    .tamato{
+        
+        background-color: #FFD180;
+        /* border-radius: 10px; */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        /* padding: 20px; */
+        /* margin-top: 20px; */
+         text-align: center; 
+         /* margin-right: 50px;
+         margin-right: 350px;
+         margin-left: 50px; 
+        transition: transform 0.3s;
+    
+    margin-left: 300px; */
+
+    }
+    .img1{
+        max-width: 100%;
+        max-height: 50%;
+    }
+    
+</style>
+<body>
+    <header>
+        <h1>Welcome to Crops & Fertilizer Section</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="crops.html">Crop & Fertilizers</a></li> <!-- Crop & Fertilizers -->
+            <li><a href="water.html">Water & Chemicals</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="chat.html">Chat</a></li>
+        </ul>
+    </nav>
+    <section id="crop-fertilizers">
+        
+        <div class="container">
+            <h2>Suitable Crops for India</h2>
+            <p>Discover crops that thrive in different Indian weather conditions along with fertilizer recommendations:</p>
+            <div class="crop-card">
+            <div class="wheat">
+            
+            <a href="https://en.wikipedia.org/wiki/Wheat"><img src="wheat.jpeg" alt="Crop 1"></a> 
+                <div class="wheatinfo"><h3>Wheat</h3>
+                <p><strong>Suitable Weather:</strong> Cool and temperate</p>
+                <p><strong>Fertilizer:</strong> Nitrogen-rich</p> </div>
+            </div> 
+        </div>
+<!--         
+                    /*<div class="crop-card"> -->
+                        <div class="rice_card">
+                        <img src="rice.jpeg" alt="Rice" max-width="20%">
+                        <h3>Rice</h3>
+                        <p><strong>Suitable Weather:</strong> Warm and humid</p>
+                        <p><strong>Fertilizer:</strong> Organic matter</p>
+                    </div>
+                </div>
+                    <div class="crop-card"> 
+                        <img src="cotton.jpeg" alt="Cotton">
+                        <h3>Cotton</h3>
+                        <p><strong>Suitable Weather:</strong> Warm and dry</p>
+                        <p><strong>Fertilizer:</strong> Potassium-rich</p>
+                    </div>
+                    <div class="sugar">
+                        <div class="img"><img src="sugarcane.jpeg" alt="Sugarcane"></div>
+                        <h3>Sugarcane</h3>
+                        <p><strong>Suitable Weather:</strong> Tropical and subtropical</p>
+                        <p><strong>Fertilizer:</strong> Nitrogen and phosphorus</p>
+                    </div>
+                    <div class="crop-card">
+                        <div class="img2"><img src="maize.jpeg" alt="Maize"></div>
+                        <h3>Maize</h3>
+                        <p><strong>Suitable Weather:</strong> Warm and temperate</p>
+                        <p><strong>Fertilizer:</strong> Balanced NPK</p>
+                    </div>
+                    <div class="soybean">
+                        <img src="soybean.jpeg" alt="Soybean">
+                        <h3>Soybean</h3>
+                        <p><strong>Suitable Weather:</strong> Warm and subtropical</p>
+                        <p><strong>Fertilizer:</strong> Nitrogen-rich</p>
+                    </div>
+                    <div class="crop-card">
+                        <img src="potato.jpeg" alt="Potato">
+                        <h3>Potato</h3>
+                        <p><strong>Suitable Weather:</strong> Cool and temperate</p>
+                        <p><strong>Fertilizer:</strong> Balanced NPK</p>
+                    </div>
+                    <div class="tamato">
+                        <img src="tomoto.jpeg" alt="Tomato">
+                        <h3>Tomato</h3>
+                        <p><strong>Suitable Weather:</strong> Warm and subtropical</p>
+                        <p><strong>Fertilizer:</strong> Organic matter</p>
+                    </div>
+                    <!-- <div class="crop-card">
+                        <img src="tea.jpg">
+                        <h3>Tea</h3>
+                        <p><strong>Suitable Weather:</strong> Cool and humid</p>
+                        <p><strong>Fertilizer:</strong> Nitrogen and potassium</p>
+                    </div> -->
+                    <div class="coffee">
+                        <img src="coffee.png" alt="Coffee">
+                        <h3>Coffee</h3>
+                        <p><strong>Suitable Weather:</strong> Warm and humid</p>
+                        <p><strong>Fertilizer:</strong> Organic matter</p>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </section>
+    
+    </section>
+    <footer>
+        <p>&copy; 2023  CSE L .Y.  BTech</p>
+    </footer>
+    
+    <!-- Add content related to crop-fertilizer recommendations here -->
+</body>
+</html>
